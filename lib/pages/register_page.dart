@@ -3,13 +3,14 @@ import 'package:chatlive/components/my_button.dart';
 import 'package:chatlive/components/my_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passController = TextEditingController();
+    final TextEditingController confPassController = TextEditingController();
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -24,7 +25,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const Gap(size: 10),
                 const Text(
-                  "Welcome back!",
+                  "Welcome!",
                   style: TextStyle(fontSize: 24),
                 ),
                 const Gap(size: 10),
@@ -40,19 +41,25 @@ class LoginPage extends StatelessWidget {
                   controller: passController,
                 ),
                 const Gap(size: 10),
-                MyButton(title: "Sign In", onTap: () {}),
+                MyTextField(
+                  title: "Confirm Password:",
+                  isPass: true,
+                  controller: confPassController,
+                ),
+                const Gap(size: 10),
+                MyButton(title: "Sign Up", onTap: () {}),
                 const Gap(size: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Not a member?"),
+                    const Text("Already a member?"),
                     const SizedBox(
                       width: 10,
                     ),
                     GestureDetector(
                       onTap: () {},
                       child: const Text(
-                        "Sign Up",
+                        "Sign In",
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
