@@ -4,7 +4,8 @@ import 'package:chatlive/components/my_text_field.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+  final void Function()? onTap;
+  const RegisterPage({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,7 @@ class RegisterPage extends StatelessWidget {
                       width: 10,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: onTap,
                       child: const Text(
                         "Sign In",
                         style: TextStyle(

@@ -4,7 +4,9 @@ import 'package:chatlive/components/my_text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final void Function()? onTap;
+
+  const LoginPage({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class LoginPage extends StatelessWidget {
                       width: 10,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: onTap,
                       child: const Text(
                         "Sign Up",
                         style: TextStyle(
